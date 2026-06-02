@@ -1,0 +1,499 @@
+/* ===================================
+   RESET
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    color:white;
+    position:relative;
+    background:#140313;
+}
+
+/* ===================================
+   BACKGROUND
+=================================== */
+
+.background-container{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-10;
+}
+
+.gradient-layer{
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#ff8fc7 0%,transparent 30%),
+    radial-gradient(circle at top right,#ffc1e3 0%,transparent 25%),
+    radial-gradient(circle at bottom center,#ff69b4 0%,transparent 40%),
+    linear-gradient(
+        135deg,
+        #120010 0%,
+        #250020 35%,
+        #4f0d43 65%,
+        #140313 100%
+    );
+}
+
+.aurora{
+    position:absolute;
+    width:70vw;
+    height:70vw;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.25;
+    animation:auroraFloat 18s infinite ease-in-out;
+}
+
+.aurora-1{
+    background:#ff7abf;
+    top:-15%;
+    left:-10%;
+}
+
+.aurora-2{
+    background:#ffb6e6;
+    bottom:-15%;
+    right:-10%;
+    animation-delay:6s;
+}
+
+.aurora-3{
+    background:#ff4da6;
+    top:25%;
+    right:20%;
+    animation-delay:12s;
+}
+
+@keyframes auroraFloat{
+    0%,100%{
+        transform:translate(0,0) scale(1);
+    }
+    50%{
+        transform:translate(50px,-40px) scale(1.15);
+    }
+}
+
+/* ===================================
+   MAIN LAYOUT
+=================================== */
+
+.main-container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+    text-align:center;
+}
+
+.hero-section{
+    width:100%;
+    max-width:900px;
+}
+
+.birthday-text-wrapper{
+    position:relative;
+}
+
+/* ===================================
+   HAPPY BIRTHDAY
+=================================== */
+
+.birthday-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(2.5rem,6vw,5rem);
+    font-weight:700;
+    letter-spacing:3px;
+
+    color:#fff;
+
+    opacity:0;
+    transform:translateY(40px);
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.8),
+        0 0 25px rgba(255,192,203,.7),
+        0 0 45px rgba(255,105,180,.5);
+}
+
+/* ===================================
+   NITHYA
+=================================== */
+
+.name-title{
+    font-family:'Great Vibes',cursive;
+
+    font-size:clamp(4rem,13vw,10rem);
+
+    line-height:1.1;
+
+    margin-top:10px;
+
+    opacity:0;
+    transform:translateY(50px);
+
+    background:linear-gradient(
+        135deg,
+        #ffffff,
+        #ffd7ec,
+        #ff9ed0,
+        #ffffff
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,.7),
+        0 0 30px rgba(255,182,193,.9),
+        0 0 60px rgba(255,105,180,.9);
+
+    animation:
+        nameFloat 5s ease-in-out infinite;
+}
+
+@keyframes nameFloat{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+.name-glow{
+    position:absolute;
+    width:300px;
+    height:300px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+    background:rgba(255,105,180,.18);
+    filter:blur(100px);
+    z-index:-1;
+}
+
+/* ===================================
+   QUOTE
+=================================== */
+
+.birthday-quote{
+    max-width:700px;
+    margin:25px auto 0;
+
+    font-size:clamp(1rem,2vw,1.2rem);
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.95);
+
+    opacity:0;
+    transform:translateY(20px);
+
+    text-shadow:
+        0 0 15px rgba(255,255,255,.2);
+}
+
+/* ===================================
+   MUSIC SECTION
+=================================== */
+
+.music-section{
+    margin-top:50px;
+}
+
+.music-core-container{
+    position:relative;
+    width:260px;
+    height:260px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ===================================
+   HEART
+=================================== */
+
+.crystal-heart{
+    width:120px;
+    height:120px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:5rem;
+
+    border-radius:30px;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+        0 0 30px rgba(255,105,180,.6),
+        0 0 60px rgba(255,105,180,.35);
+
+    animation:
+        pulseHeart 2.8s infinite ease-in-out;
+}
+
+@keyframes pulseHeart{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.12);
+    }
+}
+
+/* ===================================
+   GLOW RINGS
+=================================== */
+
+.heart-glow-ring{
+    position:absolute;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.ring-1{
+    width:170px;
+    height:170px;
+    animation:spin 14s linear infinite;
+}
+
+.ring-2{
+    width:210px;
+    height:210px;
+    animation:spinReverse 18s linear infinite;
+}
+
+.ring-3{
+    width:250px;
+    height:250px;
+    animation:spin 22s linear infinite;
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes spinReverse{
+    from{
+        transform:rotate(360deg);
+    }
+    to{
+        transform:rotate(0deg);
+    }
+}
+
+/* ===================================
+   MUSIC NOTES
+=================================== */
+
+.music-note{
+    position:absolute;
+    bottom:50%;
+    left:50%;
+
+    color:#ffd4ea;
+
+    font-size:1.5rem;
+
+    pointer-events:none;
+
+    text-shadow:
+        0 0 15px rgba(255,182,193,.8);
+
+    animation:noteFloat linear forwards;
+}
+
+@keyframes noteFloat{
+    0%{
+        opacity:0;
+        transform:
+        translate(0,0)
+        scale(.5);
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:
+        translate(var(--x),-220px)
+        rotate(20deg)
+        scale(1.3);
+    }
+}
+
+/* ===================================
+   SPARKLES
+=================================== */
+
+.sparkle{
+    position:absolute;
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 20px pink;
+
+    animation:twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:.2;
+        transform:scale(.7);
+    }
+    50%{
+        opacity:1;
+        transform:scale(1.5);
+    }
+}
+
+/* ===================================
+   PETALS
+=================================== */
+
+.petal{
+    position:absolute;
+
+    width:16px;
+    height:22px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffd5ea,
+            #ff8fc7
+        );
+
+    border-radius:
+        50% 50% 50% 0;
+
+    opacity:.7;
+
+    animation:
+        petalFall linear forwards;
+}
+
+@keyframes petalFall{
+    from{
+        transform:
+        translateY(-100px)
+        rotate(0deg);
+    }
+
+    to{
+        transform:
+        translateY(120vh)
+        rotate(360deg);
+    }
+}
+
+/* ===================================
+   TAP OVERLAY
+=================================== */
+
+.tap-overlay{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.65);
+
+    backdrop-filter:blur(8px);
+
+    z-index:999;
+}
+
+.tap-overlay.hidden{
+    display:none;
+}
+
+.tap-card{
+    background:rgba(255,255,255,.08);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+}
+
+.tap-card h3{
+    margin-bottom:8px;
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media(max-width:768px){
+
+    .main-container{
+        padding:20px;
+    }
+
+    .birthday-title{
+        letter-spacing:1px;
+    }
+
+    .birthday-quote{
+        font-size:.95rem;
+    }
+
+    .music-core-container{
+        width:220px;
+        height:220px;
+    }
+
+    .crystal-heart{
+        width:100px;
+        height:100px;
+        font-size:4rem;
+    }
+}
