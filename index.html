@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday VISHNUPRIYA ✨</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+overflow:hidden;min-height:100vh;
+font-family:'Cormorant Garamond',serif;
+background:linear-gradient(135deg,#18051f,#4c134c,#ffb6d5);
+color:white;
+}
+#welcome,#main{
+position:fixed;inset:0;
+display:flex;justify-content:center;align-items:center;
+flex-direction:column;text-align:center;
+}
+#welcome{
+z-index:10;
+background:linear-gradient(135deg,#1a0825,#ff9fcf);
+}
+#welcome h1{
+font-size:clamp(2rem,6vw,4rem);
+text-shadow:0 0 20px #fff;
+}
+.tap{
+margin-top:20px;
+font-size:1.2rem;
+letter-spacing:4px;
+animation:pulse 2s infinite;
+}
+.hidden{opacity:0;visibility:hidden;transition:1s}
+#main{padding:20px}
+.hb{font-size:clamp(2rem,5vw,4rem);opacity:0;animation:fade .8s forwards 1s}
+.name{
+font-size:clamp(3rem,9vw,6rem);
+font-weight:700;
+letter-spacing:.08em;
+text-shadow:0 0 15px #ffb6d5,0 0 40px #ff69b4;
+opacity:0;animation:fade .8s forwards 2s
+}
+.date{font-size:1.4rem;letter-spacing:.3em;opacity:0;animation:fade .8s forwards 3s}
+.quote{
+max-width:700px;
+font-size:clamp(1rem,2.5vw,1.6rem);
+margin-top:20px;
+opacity:0;animation:fade .8s forwards 4s
+}
+.heart{
+width:120px;height:120px;position:relative;
+margin-top:30px;
+transform:rotate(-45deg);
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(8px);
+animation:pulseHeart 2s infinite;
+}
+.heart:before,.heart:after{
+content:'';
+position:absolute;
+width:120px;height:120px;border-radius:50%;
+background:inherit;
+}
+.heart:before{top:-60px}
+.heart:after{left:60px}
+.note{
+position:fixed;
+bottom:120px;
+color:#ffd6e7;
+font-size:24px;
+animation:float 6s linear forwards;
+}
+.sparkle{
+position:fixed;width:4px;height:4px;
+background:white;border-radius:50%;
+animation:twinkle 4s infinite;
+}
+@keyframes fade{to{opacity:1}}
+@keyframes pulse{50%{opacity:.5}}
+@keyframes pulseHeart{50%{transform:rotate(-45deg) scale(1.08)}}
+@keyframes float{to{transform:translateY(-100vh);opacity:0}}
+@keyframes twinkle{50%{opacity:.2}}
+</style>
+</head>
+<body>
+
+<div id="welcome">
+<h1>✨ A Special Birthday Surprise ✨</h1>
+<div class="tap">Touch Anywhere To Open</div>
+</div>
+
+<div id="main">
+<div class="hb">Happy Birthday</div>
+<div class="name">VISHNUPRIYA</div>
+<div class="date">24 / 06</div>
+<div class="quote">May your life be filled with happiness, peace, success, and endless beautiful memories. Happy Birthday.</div>
+<div class="heart"></div>
+</div>
+
+<audio id="song" loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const welcome=document.getElementById('welcome');
+const song=document.getElementById('song');
+
+welcome.addEventListener('click',()=>{
+song.play().catch(()=>{});
+welcome.classList.add('hidden');
+},{once:true});
+
+setInterval(()=>{
+const n=document.createElement('div');
+n.className='note';
+n.textContent=['♪','♫','♬','♩'][Math.floor(Math.random()*4)];
+n.style.left=Math.random()*100+'vw';
+document.body.appendChild(n);
+setTimeout(()=>n.remove(),6000);
+},700);
+
+for(let i=0;i<50;i++){
+const s=document.createElement('div');
+s.className='sparkle';
+s.style.left=Math.random()*100+'vw';
+s.style.top=Math.random()*100+'vh';
+s.style.animationDelay=Math.random()*4+'s';
+document.body.appendChild(s);
+}
+</script>
+</body>
+</html>
